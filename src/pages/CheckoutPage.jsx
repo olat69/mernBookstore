@@ -13,7 +13,7 @@ const CheckoutPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Access totalPrice and cartItems passed from CartPage
+  // Access totalPrice and cartItems pass from CartPage
   const { totalPrice, cartItems } = location.state || {};
   const [createOrder, { isLoading, error }] = useCreateOrderMutation();
   const { currentUser } = useAuth();
