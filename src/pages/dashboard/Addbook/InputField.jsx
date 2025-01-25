@@ -1,6 +1,6 @@
 import React from "react";
 
-const Inputfield = ({ label, name, type = "text", register, placeholder }) => {
+const InputField = ({ label, name, type = "text", register, placeholder }) => {
   return (
     <div className="mb-4">
       <label className="block text-sm font-semibold text-gray-700">
@@ -16,4 +16,4 @@ const Inputfield = ({ label, name, type = "text", register, placeholder }) => {
   );
 };
 
-export default Inputfield;
+export default InputField;

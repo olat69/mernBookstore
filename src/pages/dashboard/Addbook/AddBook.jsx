@@ -1,11 +1,10 @@
 import { useState } from "react";
-import Inputfield from "../AddBook/InputField";
-
 import SelectField from "./SelectField";
 import { useForm } from "react-hook-form";
 
 import { useAddBookMutation } from "../../../redux/features/book/booksApi";
 import Swal from "sweetalert2";
+import InputField from "./InputField";
 
 const AddBook = () => {
   const {
@@ -55,7 +54,7 @@ const AddBook = () => {
 
       <form onSubmit={handleSubmit(onSubmit)} className="">
         {/* Reusable Input Field for Title */}
-        <Inputfield
+        <InputField
           label="Title"
           name="title"
           placeholder="Enter book title"
@@ -63,7 +62,7 @@ const AddBook = () => {
         />
 
         {/* Reusable Textarea for Description */}
-        <Inputfield
+        <InputField
           label="Description"
           name="description"
           placeholder="Enter book description"
@@ -102,7 +101,7 @@ const AddBook = () => {
         </div>
 
         {/* Old Price */}
-        <Inputfield
+        <InputField
           label="Old Price"
           name="oldPrice"
           type="number"
@@ -111,7 +110,7 @@ const AddBook = () => {
         />
 
         {/* New Price */}
-        <Inputfield
+        <InputField
           label="New Price"
           name="newPrice"
           type="number"

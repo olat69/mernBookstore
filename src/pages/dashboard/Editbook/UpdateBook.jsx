@@ -9,7 +9,7 @@ import Loading from "../../../components/Loading";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { getBaseUrl } from "../../../utils/baseURL";
-import Inputfield from "../AddBook/InputField";
+import InputField from "../Addbook/InputField";
 import SelectField from "../Addbook/SelectField";
 
 const UpdateBook = () => {
@@ -74,14 +74,14 @@ const UpdateBook = () => {
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Update Book</h2>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Inputfield
+        <InputField
           label="Title"
           name="title"
           placeholder="Enter book title"
           register={register}
         />
 
-        <Inputfield
+        <InputField
           label="Description"
           name="description"
           placeholder="Enter book description"
@@ -115,7 +115,7 @@ const UpdateBook = () => {
           </label>
         </div>
 
-        <Inputfield
+        <InputField
           label="Old Price"
           name="oldPrice"
           type="number"
@@ -123,7 +123,7 @@ const UpdateBook = () => {
           register={register}
         />
 
-        <Inputfield
+        <InputField
           label="New Price"
           name="newPrice"
           type="number"
@@ -131,7 +131,7 @@ const UpdateBook = () => {
           register={register}
         />
 
-        <Inputfield
+        <InputField
           label="Cover Image URL"
           name="coverImage"
           type="text"
