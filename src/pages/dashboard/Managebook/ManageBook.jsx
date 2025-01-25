@@ -11,7 +11,7 @@ const ManageBooks = () => {
 
   const [deleteBook] = useDeleteBookMutation();
 
-  // Handle deleting a book
+  // Handle deleting book
   const handleDeleteBook = async (id) => {
     try {
       await deleteBook(id).unwrap();
