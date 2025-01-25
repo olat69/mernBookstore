@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
 import { getBaseUrl } from "../utils/baseURL";
 import { useNavigate } from "react-router-dom";
