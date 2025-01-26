@@ -6,9 +6,7 @@ const Banner = () => {
   return (
     <div className="mt-3 flex flex-col md:flex-row md:space-x-10">
       <div className="w-full md:w-1/2 mt-6 px-4">
-        <h1 className="text-4xl font-semibold text-center md:text-left">
-          Delight BookstorE
-        </h1>
+        <h1 className="text-4xl font-semibold text-left">Delight BookstorE</h1>
         <br />
         <p className="text-base text-gray-700 mb-4">
           Welcome to your new literary haven! Whether you are searching for a

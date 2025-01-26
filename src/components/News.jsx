@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { Link } from "react-router";
+import { Link } from "react-router-dom"; // Correct import for react-router-dom
 
 const news = [
   {
@@ -51,9 +51,9 @@ const news = [
 
 const News = () => {
   return (
-    <div className=" py-16 w-full">
+    <div className="py-16 w-full">
       <h1 className="text-3xl font-semibold">News Blog</h1>
-      <div className="py-5 "></div>
+      <div className="py-5"></div>
       <Swiper
         slidesPerView={"auto"}
         centeredSlides={true}
@@ -66,30 +66,33 @@ const News = () => {
         className="mySwiper"
       >
         <div>
-          {news.map((news, index) => (
-            <SwiperSlide modules={[]} key={index}>
-              <div className=" rounded-lg transition-shadow duration-300 ">
-                <div className="flex flex-col sm:flex-row sm:items-center size-max  sm:justify-center ">
-                  <div className="  size-1/2 sm:h-72 sm:w-max sm:flex-shrink-0 border rounded-md">
-                    <Link to={`/new/${news.id}`}>
+          {news.map((newsItem, index) => (
+            <SwiperSlide key={index}>
+              <div className="rounded-lg transition-shadow duration-300 shadow-md">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 sm:px-6 py-6">
+                  {/* Image Section */}
+                  <div className="w-full sm:w-1/2 md:w-1/4 sm:h-72 sm:flex-shrink-0 border rounded-md overflow-hidden">
+                    <Link to={`/new/${newsItem.id}`}>
                       <img
-                        src={news.image}
-                        alt=""
-                        className=" bg-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200"
+                        src={newsItem.image}
+                        alt={newsItem.title}
+                        className="w-full h-full object-cover sm:object-contain p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200"
                       />
                     </Link>
                   </div>
-                  <div className="ml-5">
-                    <Link to={`/books/${news.id}`}>
+
+                  {/* Text Section */}
+                  <div className="mt-4 sm:mt-0 sm:ml-5 flex flex-col justify-between w-full sm:w-1/2">
+                    <Link to={`/books/${newsItem.id}`}>
                       <h3 className="text-xl font-semibold hover:text-blue-600 mb-3">
-                        {news.title}
+                        {newsItem.title}
                       </h3>
                     </Link>
                     <div className="h-[4px] w-12 bg-primary mb-5"></div>
-                    <p className="text-gray-600 mb-5 ">
-                      {news.description.length > 80
-                        ? `${news.description.slice(0, 80)}...`
-                        : news.description}
+                    <p className="text-gray-600 mb-5 text-sm sm:text-base">
+                      {newsItem.description.length > 80
+                        ? `${newsItem.description.slice(0, 80)}...`
+                        : newsItem.description}
                     </p>
                   </div>
                 </div>
