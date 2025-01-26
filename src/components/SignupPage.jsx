@@ -84,7 +84,7 @@ const SignupPage = () => {
           <label className="w-full">
             Create Username:
             <input
-              placeholder="Enter a valid email"
+              placeholder="Use a valid email"
               className="w-full py-2 pl-2 text-xl mt-2 rounded-md"
               type="email"
               name="email"

@@ -85,9 +85,9 @@ const LoginPage = () => {
 
           {/* Email Input */}
           <label className="w-full">
-            Create an Email:
+            Username:
             <input
-              placeholder="Enter a valid email"
+              placeholder="Enter email"
               className="w-full py-2 pl-2 text-xl mt-2 rounded-md"
               type="email"
               name="email"
@@ -100,7 +100,7 @@ const LoginPage = () => {
 
           {/* Password Input */}
           <label className="w-full mt-4">
-            Create Password:
+            Password:
             <input
               placeholder="Enter your password"
               className="w-full py-2 pl-2 text-xl mt-2 rounded-md"
