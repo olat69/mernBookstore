@@ -15,6 +15,7 @@ import Dashboard from "../pages/dashboard/Dashboad";
 import AddBook from "../pages/dashboard/Addbook/AddBook";
 import UpdateBook from "../pages/dashboard/Editbook/UpdateBook";
 import ManageBooks from "../pages/dashboard/Managebook/ManageBook";
+import ContactsPage from "../pages/ContactsPage";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         path: "/login",
         element: <LoginPage />,
       },
+      {
+        path: "/contacts",
+        element: <ContactsPage />,
+      },
+
       {
         path: "/signup",
         element: <SignupPage />,

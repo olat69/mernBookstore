@@ -1,12 +1,16 @@
+import { FiMail } from "react-icons/fi";
 import image from "../assets/homeposter.jpg";
+import { Link } from "react-router";
 
 const Banner = () => {
   return (
-    <div className=" mt-3 flex flex-wrap-reverse md:flex ">
-      <div className="w-full md:w-1/2 mt-6 ">
-        <h1 className="text-4xl font-semibold">Delight BookstorE</h1>
-        <br></br>
-        <p>
+    <div className="mt-3 flex flex-col md:flex-row md:space-x-10">
+      <div className="w-full md:w-1/2 mt-6 px-4">
+        <h1 className="text-4xl font-semibold text-center md:text-left">
+          Delight BookstorE
+        </h1>
+        <br />
+        <p className="text-base text-gray-700 mb-4">
           Welcome to your new literary haven! Whether you are searching for a
           gripping thriller, a soul-stirring romance, a thought-provoking
           non-fiction, or the latest bestsellers, our carefully curated
@@ -17,12 +21,20 @@ const Banner = () => {
           fast delivery, and recommendations tailored just for you, your next
           great story is only a click away.
         </p>
+
+        <Link
+          to={"/signup"}
+          className="bg-primary text-white rounded-md px-6 py-2 flex items-center justify-center hover:bg-gray-700 transition-all mt-4 mx-auto md:mx-0"
+        >
+          <FiMail className="mr-2" /> Subscribe
+        </Link>
       </div>
-      <div className="w-full md:w-1/2 ">
+
+      <div className="w-full md:w-1/2 mt-6 flex justify-center md:justify-start">
         <img
           src={image}
-          alt="image"
-          className="w-full md:w-3/4 items-center md:ml-28"
+          alt="Bookstore banner"
+          className="w-full md:w-3/4 md:ml-12 object-cover"
         />
       </div>
     </div>
