@@ -85,11 +85,11 @@ const LoginPage = () => {
 
           {/* Email Input */}
           <label className="w-full">
-            Enter Email:
+            Create an Email:
             <input
-              placeholder="Enter your email"
+              placeholder="Enter a valid email"
               className="w-full py-2 pl-2 text-xl mt-2 rounded-md"
-              type="email" // Use email type for better validation
+              type="email"
               name="email"
               value={inputs.email}
               onChange={handleChange}
@@ -100,7 +100,7 @@ const LoginPage = () => {
 
           {/* Password Input */}
           <label className="w-full mt-4">
-            Enter Password:
+            Create Password:
             <input
               placeholder="Enter your password"
               className="w-full py-2 pl-2 text-xl mt-2 rounded-md"

@@ -13,8 +13,7 @@ const Recommend = () => {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error fetching books</div>;
 
-  // Filter books that are trending
-  const trendingBooks = books.filter((book) => book.trending); // Assuming `isTrending` is the property indicating if the book is trending
+  const trendingBooks = books.filter((book) => book.trending);
 
   return (
     <div className="w-full">
