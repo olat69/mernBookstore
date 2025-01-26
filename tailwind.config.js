@@ -9,8 +9,8 @@ export default {
         blackbg: "#F3F3F3",
       },
       fontFamily: {
-        primary: ["Montserrat", "sans-serif"],
-        secondary: ["Nunito Sans", "sans-serif"],
+        primary: ["Montserrat", "sans -serif"],
+        secondary: ["Nunito Sans", "sans - serif"],
       },
     },
   },
