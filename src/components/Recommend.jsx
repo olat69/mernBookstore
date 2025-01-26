@@ -13,10 +13,13 @@ const Recommend = () => {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error fetching books</div>;
 
+  // Filter books that are trending
+  const trendingBooks = books.filter((book) => book.trending); // Assuming `isTrending` is the property indicating if the book is trending
+
   return (
     <div className="w-full">
       <h1 className="text-3xl font-semibold">Recommended For You</h1>
-      <div className="py-5 "></div>
+      <div className="py-5"></div>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -43,11 +46,15 @@ const Recommend = () => {
         className="mySwiper"
       >
         <div>
-          {books.map((book) => (
-            <SwiperSlide modules={[]} key={book._id}>
-              <BookCard book={book} />
-            </SwiperSlide>
-          ))}
+          {trendingBooks.length === 0 ? (
+            <div>No trending books available at the moment.</div>
+          ) : (
+            trendingBooks.map((book) => (
+              <SwiperSlide key={book._id}>
+                <BookCard book={book} />
+              </SwiperSlide>
+            ))
+          )}
         </div>
       </Swiper>
     </div>

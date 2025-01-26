@@ -30,7 +30,7 @@ const BookCard = ({ book }) => {
             <img
               src={`${getImgUrl(book?.coverImage)}`}
               alt={book?.title}
-              className="w-full h-auto object-cover transition-all duration-200 hover:scale-105"
+              className="w-full h-auto object-contain transition-all duration-200 hover:scale-105 sm:max-w-xs md:max-w-sm lg:max-w-md" // Responsive image class
             />
           </Link>
         </div>
