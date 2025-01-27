@@ -102,7 +102,7 @@ const LoginPage = () => {
           <label className="w-full mt-4">
             Password:
             <input
-              placeholder="Enter your password"
+              placeholder="Enter password"
               className="w-full py-2 pl-2 text-xl mt-2 rounded-md"
               type="password"
               name="password"
