@@ -29,10 +29,10 @@ const Navbar = () => {
   };
 
   return (
-    <header className="max-w-screen-2xl mx-auto px-14 py-6">
+    <header className="max-w-screen-2xl mx-auto px-5 md:px-14 py-6">
       <nav className="flex justify-between">
         <div className="flex items-center gap-4 md:gap-16">
-          <AiOutlineBars onClick={toggleSidebar} className="size-7 md:size-6" />
+          <AiOutlineBars onClick={toggleSidebar} className="size-6 " />
           <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
           <div>
             <IoSearchOutline className="size-5 absolute inline-block inset-y-8" />
@@ -43,13 +43,13 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <div className="flex items-center justify-between gap-2 md:gap-5">
+        <div className="flex items-center justify-between gap-3 md:gap-5">
           <div>
             {currentUser ? (
               // Show logout button with hover tooltip
               <button
                 onClick={handleLogOut}
-                className="py-2"
+                className="py-2 bg-slate-800 text-white"
                 title="Logout" // This will show a tooltip on hover
               >
                 <FaUser className="size-5" />
@@ -62,7 +62,7 @@ const Navbar = () => {
             )}
           </div>
 
-          <button className="hidden sm:block">
+          <button>
             <FaRegHeart className="size-5" />
           </button>
           <Link
