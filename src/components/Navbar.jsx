@@ -32,14 +32,14 @@ const Navbar = () => {
     <header className="max-w-screen-2xl mx-auto px-14 py-6">
       <nav className="flex justify-between">
         <div className="flex items-center gap-4 md:gap-16">
-          <AiOutlineBars onClick={toggleSidebar} className="size-6" />
+          <AiOutlineBars onClick={toggleSidebar} className="size-7 md:size-6" />
           <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
           <div>
             <IoSearchOutline className="size-5 absolute inline-block inset-y-8" />
             <input
               type="text"
               placeholder="Search here"
-              className="bg-slate-200 w-full py-1 md:px-8 px-6 focus:outline-none font-primary"
+              className="bg-slate-200 w-3/4 md:w-full py-1 md:px-8 px-6 focus:outline-none font-primary"
             />
           </div>
         </div>
@@ -67,11 +67,11 @@ const Navbar = () => {
           </button>
           <Link
             to="/cart"
-            className="bg-primary flex items-center justify-evenly w-full py-1 md:px-5 px-4"
+            className="bg-primary flex items-center justify-center py-2 px-4 rounded-md text-white"
           >
-            <MdOutlineShoppingCart />
+            <MdOutlineShoppingCart className="text-xl" />
             {cartItems.length > 0 && (
-              <span className="text-sm font-semibold sm:ml-1">
+              <span className="text-sm font-semibold ml-2">
                 {cartItems.length}
               </span>
             )}

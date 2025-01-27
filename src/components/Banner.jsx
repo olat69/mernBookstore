@@ -8,6 +8,17 @@ const Banner = () => {
       <div className="w-full md:w-1/2 mt-6 px-4">
         <h1 className="text-4xl font-semibold text-left">Delight BookstorE</h1>
         <br />
+        <p className="text-base text-gray-700 mb-4">
+          Welcome to your new literary haven! Whether you are searching for a
+          gripping thriller, a soul-stirring romance, a thought-provoking
+          non-fiction, or the latest bestsellers, our carefully curated
+          selection has something for every type of reader. Explore our diverse
+          collection, discover hidden gems, and find your next unforgettable
+          read. We are here to help you embark on new adventures, dive deep into
+          captivating worlds, and spark your imagination. With easy browsing,
+          fast delivery, and recommendations tailored just for you, your next
+          great story is only a click away.
+        </p>
 
         <Link
           to={"/signup"}
