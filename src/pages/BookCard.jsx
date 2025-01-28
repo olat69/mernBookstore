@@ -23,7 +23,7 @@ const BookCard = ({ book }) => {
   };
 
   return (
-    <div className="rounded-lg transition-shadow duration-300 bg-white shadow-md p-4 flex flex-col h-[450px]">
+    <div className="overflow-hidden rounded-lg transition-shadow duration-300 bg-white shadow-md p-4 flex flex-col h-[450px]">
       {/* Image Container */}
       <div className="sm:h-72 w-full sm:w-48 sm:flex-shrink-0 border rounded-md overflow-hidden">
         <Link to={`/books/${book._id}`}>
@@ -36,9 +36,9 @@ const BookCard = ({ book }) => {
       </div>
 
       {/* Book Info */}
-      <div className="flex flex-col justify-between flex-1 mt-2">
+      <div className=" flex flex-col justify-between flex-1 mt-2">
         <Link to={`/books/${book._id}`}>
-          <h3 className="text-xl font-semibold hover:text-blue-600 mb-1 text-ellipsis overflow-hidden whitespace-nowrap">
+          <h3 className="  text-xl font-semibold hover:text-blue-600 mb-1 text-ellipsis overflow-hidden whitespace-nowrap">
             {/* Truncate long titles */}
             {book?.title}
           </h3>
