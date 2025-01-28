@@ -34,7 +34,7 @@ const TopSellers = () => {
   return (
     <div className="py-16 w-full">
       <h1 className="text-3xl font-semibold">Top Sellers</h1>
-      <div className="py-5 ">
+      <div className="py-5">
         <select
           onChange={(e) => setSelectedCategory(e.target.value)}
           name="category"
@@ -59,15 +59,15 @@ const TopSellers = () => {
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 1, // Change to 1 slide per view for medium screens
+            slidesPerView: 2, // Change to 2 slides per view for medium screens
             spaceBetween: 20,
           },
           1024: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 40,
           },
           1180: {
-            slidesPerView: 3,
+            slidesPerView: 4, // 4 slides per view on large screens
             spaceBetween: 50,
           },
         }}

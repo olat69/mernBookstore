@@ -27,10 +27,8 @@ const AddBook = () => {
         title: "Book added",
         text: "Your book is uploaded successfully!",
         icon: "success",
-        showCancelButton: true,
         confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, It's Okay!",
+        confirmButtonText: "Done!",
       });
       reset();
       setimageFileName("");
@@ -102,19 +100,19 @@ const AddBook = () => {
 
         {/* Old Price */}
         <InputField
-          label="Old Price"
-          name="oldPrice"
-          type="number"
-          placeholder="Old Price"
+          label="Author"
+          name="Author"
+          type="text"
+          placeholder="Author"
           register={register}
         />
 
         {/* New Price */}
         <InputField
-          label="New Price"
-          name="newPrice"
+          label="Price"
+          name="Price"
           type="number"
-          placeholder="New Price"
+          placeholder="Price"
           register={register}
         />
 

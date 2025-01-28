@@ -147,12 +147,12 @@ const CheckoutPage = () => {
                 <div className="flex items-center space-x-4">
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">{item.title}</h4>
-                    <p className="text-sm text-gray-600">{`$${item.newPrice}`}</p>
+                    <p className="text-sm text-gray-600">{`#${item.Price}`}</p>
                   </div>
                 </div>
                 <p className="text-lg font-semibold">{`Qty: ${item.quantity}`}</p>
-                <p className="text-lg font-semibold">{`$${(
-                  item.newPrice * item.quantity
+                <p className="text-lg font-semibold">{`#${(
+                  item.Price * item.quantity
                 ).toFixed(2)}`}</p>
               </div>
             ))}
@@ -161,7 +161,7 @@ const CheckoutPage = () => {
           <div className="flex justify-between items-center mt-6">
             <span className="text-xl font-semibold">Total:</span>
             <span className="text-xl font-semibold text-blue-600">
-              ${totalPrice.toFixed(2)}
+              #{totalPrice.toFixed(2)}
             </span>
           </div>
         </motion.div>

@@ -14,7 +14,7 @@ const CartPage = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
 
   const totalPrice = cartItems.reduce(
-    (total, item) => total + item.newPrice * item.quantity,
+    (total, item) => total + item.Price * item.quantity,
     0
   );
 
@@ -62,7 +62,7 @@ const CartPage = () => {
                   </h3>
                   <div className="text-sm text-gray-500 mt-2">
                     <span className="font-semibold text-gray-800">
-                      ${item.newPrice}
+                      #{item.Price}
                     </span>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ const CartPage = () => {
 
           <div className="flex flex-col sm:flex-row justify-between items-center mt-8 border-t pt-6">
             <div className="text-2xl font-semibold text-gray-800">
-              Total: ${totalPrice.toFixed(2)}
+              Total: #{totalPrice.toFixed(2)}
             </div>
             <button
               onClick={handleProceedToCheckout}

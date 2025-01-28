@@ -44,10 +44,10 @@ const BookPreview = () => {
 
         <div className="mb-5">
           <p className="text-gray-700 mb-2">
-            <strong>Author:</strong> {book.author || "admin"}
+            <strong>Author:</strong> {book.Author || "admin"}
           </p>
           <p className="text-gray-700 mb-4">
-            <strong>Published:</strong>{" "}
+            <strong>Posted on:</strong>{" "}
             {new Date(book?.createdAt).toLocaleDateString()}
           </p>
           <p className="text-gray-700 mb-4 capitalize">

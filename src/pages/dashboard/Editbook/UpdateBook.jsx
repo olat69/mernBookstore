@@ -116,18 +116,18 @@ const UpdateBook = () => {
         </div>
 
         <InputField
-          label="Old Price"
-          name="oldPrice"
-          type="number"
-          placeholder="Old Price"
+          label="Author"
+          name="Author"
+          type="text"
+          placeholder="Author"
           register={register}
         />
 
         <InputField
-          label="New Price"
-          name="newPrice"
+          label="Price"
+          name="Price"
           type="number"
-          placeholder="New Price"
+          placeholder="Price"
           register={register}
         />
 
