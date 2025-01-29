@@ -1,10 +1,33 @@
 import PropTypes from "prop-types";
 import { FiX } from "react-icons/fi";
+import { useEffect, useRef } from "react";
 
 const Sidebar = ({ isOpen, onClose }) => {
+  const sidebarRef = useRef();
+
+  // Close sidebar when clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
   return (
     <div
-      className={`fixed top-0 left-0 w-64 h-full bg-gray-800 bg-opacity-95  text-white transition-transform duration-300 ease-in-out ${
+      ref={sidebarRef}
+      className={`fixed top-0 left-0 w-64 h-full bg-gray-800 bg-opacity-95 text-white transition-transform duration-300 ease-in-out ${
         isOpen ? "transform-none z-50" : "-translate-x-full"
       }`}
     >
