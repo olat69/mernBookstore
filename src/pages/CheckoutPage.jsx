@@ -7,13 +7,15 @@ import Swal from "sweetalert2";
 import { useCreateOrderMutation } from "../redux/features/orders/ordersApi";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
-import { FaCreditCard, FaPhone, FaUser } from "react-icons/fa"; // Import React Icons
+import { FaCreditCard, FaPhone, FaUser } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../redux/features/cart/cartSlice";
 
 const CheckoutPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // Access totalPrice and cartItems pass from CartPage
   const { totalPrice, cartItems } = location.state || {};
   const [createOrder, { isLoading, error }] = useCreateOrderMutation();
   const { currentUser } = useAuth();
@@ -72,8 +74,8 @@ const CheckoutPage = () => {
       showCancelButton: true,
       confirmButtonText: "Yes, proceed",
       cancelButtonText: "Cancel order",
-      confirmButtonColor: "#4CAF50", // Green
-      cancelButtonColor: "#F44336", // Red
+      confirmButtonColor: "#4CAF50",
+      cancelButtonColor: "#F44336",
     }).then((result) => {
       if (result.isConfirmed) {
         // Proceed to create the order if confirmed
@@ -83,13 +85,16 @@ const CheckoutPage = () => {
           address: formData.address,
           phone: formData.phone,
           totalPrice: totalPrice,
-          cartItems: cartItems, // Include cart items in the order
+          cartItems: cartItems,
         };
 
         // Call API to create order
         createOrder(newOrder)
           .unwrap()
           .then(() => {
+            // Reset the cart after successful order placement
+            dispatch(clearCart()); // Dispatch the clearCart action to reset the cart
+
             Swal.fire({
               title: "Confirmed Order",
               text: "Your order has been placed successfully!",
@@ -108,7 +113,6 @@ const CheckoutPage = () => {
             });
           });
       } else {
-        // If canceled, show a cancellation message
         Swal.fire({
           title: "Order Canceled",
           text: "Your order has been canceled.",

@@ -58,11 +58,11 @@ const Navbar = () => {
         <div className="flex items-center gap-4 md:gap-16">
           <AiOutlineBars
             onClick={toggleSidebar}
-            className="size-7 md:size-6 hover:cursor-pointer "
+            className="size-6 hover:cursor-pointer "
           />
           <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
           <div className="relative">
-            <IoSearchOutline className="size-7 md:size-6 absolute inline-block inset-y-1 md:left-1" />
+            <IoSearchOutline className="size-5 md:size-6 absolute inline-block inset-y-1 md:left-1" />
             <input
               type="text"
               value={searchQuery}

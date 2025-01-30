@@ -34,6 +34,7 @@ const CartPage = () => {
     // Pass totalPrice and cartItems using navigation state
     navigate("/checkoutpage", { state: { totalPrice, cartItems } });
   };
+
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-4xl font-primary font-semibold text-gray-800 mb-8 text-center sm:text-left">
@@ -42,7 +43,7 @@ const CartPage = () => {
 
       {cartItems.length === 0 ? (
         <p className="text-lg text-gray-600 text-center">
-          Your cart is empty. Add some books to your cart!
+          Your cart is empty. Add some items to your cart!
         </p>
       ) : (
         <>
