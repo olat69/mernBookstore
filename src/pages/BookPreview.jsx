@@ -17,15 +17,15 @@ const BookPreview = () => {
   const handleAddToCart = (item) => {
     if (!currentUser) {
       Swal.fire({
-        title: "Please Sign Up",
+        title: "Please Login",
         text: "You must be logged in to add items to your cart.",
         icon: "warning",
-        confirmButtonText: "Sign Up",
+        confirmButtonText: "Login",
         showCancelButton: true,
         cancelButtonText: "Cancel",
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location.href = "/signup";
+          window.location.href = "/login";
         }
       });
     } else {
