@@ -8,6 +8,7 @@ import { useCreateOrderMutation } from "../redux/features/orders/ordersApi";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaCreditCard, FaPhone, FaUser } from "react-icons/fa";
+import { TbTruckDelivery } from "react-icons/tb";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../redux/features/cart/cartSlice";
 import PaystackPop from "@paystack/inline-js";
@@ -194,10 +195,8 @@ const CheckoutPage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <FaCreditCard className="text-2xl text-gray-600" />
-          <h2 className="text-2xl font-semibold text-center">
-            Payment on Delivery
-          </h2>
+          <TbTruckDelivery className="size-10 text-gray-600" />
+          <h2 className="text-2xl font-semibold text-center">Delivery</h2>
         </motion.div>
 
         <motion.div
