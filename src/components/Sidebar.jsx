@@ -40,7 +40,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           <a href="/">Home</a>
         </li>
         <li className="py-2 text-center hover:bg-gray-700 mt-7">
-          <a href="#about">About</a>
+          <a href="/cart">Cart</a>
         </li>
         <li className="py-2 text-center hover:bg-gray-700 mt-7">
           <a href="/orders">Orders</a>

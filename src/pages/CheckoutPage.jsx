@@ -10,6 +10,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaCreditCard, FaPhone, FaUser } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../redux/features/cart/cartSlice";
+import PaystackPop from "@paystack/inline-js";
 
 const CheckoutPage = () => {
   const location = useLocation();
@@ -91,17 +92,34 @@ const CheckoutPage = () => {
         // Call API to create order
         createOrder(newOrder)
           .unwrap()
-          .then(() => {
-            // Reset the cart after successful order placement
-            dispatch(clearCart()); // Dispatch the clearCart action to reset the cart
+          .then((orderData) => {
+            const transactionRef = orderData.reference || `order-${Date.now()}`;
 
-            Swal.fire({
-              title: "Confirmed Order",
-              text: "Your order has been placed successfully!",
-              icon: "success",
-              confirmButtonText: "Okay",
+            // Trigger Paystack payment
+            const paystack = new PaystackPop();
+            paystack.newTransaction({
+              key: "pk_test_0237d8bd7998ac6a3c2ce41764ef714eebbc1836",
+              email: formData.email,
+              amount: totalPrice * 100,
+              currency: "NGN",
+              ref: transactionRef,
+              onClose: function () {
+                alert("Transaction was not completed");
+              },
+              callback: function (response) {
+                // Handle the success callback
+                Swal.fire({
+                  title: "Payment Successful",
+                  text: "Your payment was successful! Redirecting...",
+                  icon: "success",
+                  confirmButtonText: "Okay",
+                }).then(() => {
+                  // After successful payment, navigate to the orders page
+                  dispatch(clearCart()); // Clear the cart after payment
+                  navigate("/orders"); // Redirect user to orders page or wherever necessary
+                });
+              },
             });
-            navigate("/orders");
           })
           .catch((error) => {
             console.error("Error placing order", error);
