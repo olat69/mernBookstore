@@ -53,8 +53,8 @@ const SignupPage = () => {
       console.log("success");
       setInputs({ email: "", password: "" });
     } catch (error) {
-      setAlertMessage("An error occurred. Please try again.");
-      console.log("error");
+      setAlertMessage("User already exists.");
+      setAlertType("error");
     } finally {
       setLoading(false);
     }
@@ -112,7 +112,7 @@ const SignupPage = () => {
           {alertMessage && (
             <div
               className={`${
-                alertType === "success" ? "bg-green-500" : "bg-green-500"
+                alertType === "success" ? "bg-green-500" : "bg-red-500"
               } text-white text-sm px-4 py-2 rounded-md shadow-md mt-4`}
             >
               <p>{alertMessage}</p>
@@ -136,7 +136,7 @@ const SignupPage = () => {
                 animate={{ rotate: 360 }}
                 transition={{
                   repeat: Infinity,
-                  duration: 0.5,
+                  duration: 0.3,
                   ease: "linear",
                 }}
               />
