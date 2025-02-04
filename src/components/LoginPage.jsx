@@ -143,7 +143,7 @@ const LoginPage = () => {
                 animate={{ rotate: 360 }}
                 transition={{
                   repeat: Infinity,
-                  duration: 1, // Controls the speed of rotation
+                  duration: 0.3,
                   ease: "linear",
                 }}
               />

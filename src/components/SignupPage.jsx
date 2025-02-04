@@ -148,7 +148,7 @@ const SignupPage = () => {
           {/* Redirect to Login */}
           <a
             href="/Login"
-            className="mt-4 text-sm text-blue-500 hover:underline"
+            className="mt-3 text-sm text-blue-500 hover:underline"
           >
             Already have an account? Login here.
           </a>
