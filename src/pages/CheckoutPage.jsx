@@ -70,7 +70,7 @@ const CheckoutPage = () => {
 
     // First confirmation alert
     Swal.fire({
-      title: "Are you sure?",
+      title: "Proceed to payment",
       text: "Do you want to proceed with the order?",
       icon: "question",
       showCancelButton: true,
@@ -111,7 +111,7 @@ const CheckoutPage = () => {
                 // Handle the success callback
                 Swal.fire({
                   title: "Payment Successful",
-                  text: "Your payment was successful! Redirecting...",
+                  text: "Your payment was successful!",
                   icon: "success",
                   confirmButtonText: "Okay",
                 }).then(() => {
